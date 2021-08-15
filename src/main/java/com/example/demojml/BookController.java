@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/demo")
+@RequestMapping("/api/alpha")
 public class BookController {
 
     @GetMapping("/{nome}")
     public String findById(@PathVariable(name = "nome") String nome) {
-        return "oi " + nome + " --> :)";
+        return "versao: 1.0 -->> oi " + nome + " --> :)";
     }
 }
