@@ -1,4 +1,4 @@
-package com.example.demojml;
+package br.com.massas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

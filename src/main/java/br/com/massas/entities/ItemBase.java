@@ -1,4 +1,4 @@
-package com.example.demojml.entities;
+package br.com.massas.entities;
 
 import lombok.Data;
 

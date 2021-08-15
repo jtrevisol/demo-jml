@@ -1,7 +1,10 @@
-package com.example.demojml;
+package br.com.massas;
 
-import com.example.demojml.entities.Categoria;
-import com.example.demojml.entities.Produto;
+import br.com.massas.entities.Categoria;
+import br.com.massas.entities.Produto;
+import br.com.massas.services.CategoriaService;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -9,17 +12,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/catalogo")
+@AllArgsConstructor
+@Slf4j
 public class CatalogoController {
 
-    private List<Categoria> categorias;
+    private CategoriaService categoriaService;
 
-    public CatalogoController() {
-        this.categorias = new ArrayList<>();
+    @PostConstruct
+    public void setup() {
+        List<Categoria> categorias = new ArrayList<>();
 
         {
             Categoria categoria = new Categoria();
@@ -41,7 +48,7 @@ public class CatalogoController {
                 categoria.getProdutos().add(e);
             }
 
-            this.categorias.add(categoria);
+            categorias.add(categoria);
         }
 
         {
@@ -65,7 +72,7 @@ public class CatalogoController {
                 categoria.getProdutos().add(e);
             }
 
-            this.categorias.add(categoria);
+            categorias.add(categoria);
         }
         {
             Categoria categoria = new Categoria();
@@ -89,7 +96,7 @@ public class CatalogoController {
                 categoria.getProdutos().add(e);
             }
 
-            this.categorias.add(categoria);
+            categorias.add(categoria);
         }
 
         {
@@ -127,7 +134,7 @@ public class CatalogoController {
                 e.setNome("Risole");
                 categoria.getProdutos().add(e);
             }
-            this.categorias.add(categoria);
+            categorias.add(categoria);
         }
 
         {
@@ -155,12 +162,19 @@ public class CatalogoController {
                 e.setNome("Torta de aniversário");
                 categoria.getProdutos().add(e);
             }
-            this.categorias.add(categoria);
+            categorias.add(categoria);
         }
+
+        if (categoriaService.findAll() == null || categoriaService.findAll().isEmpty()) {
+            log.info("nada no banco");
+            categoriaService.saveAll(categorias);
+        }
+
+        categoriaService.findAll().stream().forEach(a -> log.info(a.toString()));
     }
 
     @GetMapping(path = "/categorias", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> categorias() {
-        return new ResponseEntity<Object>(categorias, HttpStatus.OK);
+        return new ResponseEntity<Object>(categoriaService.findAll(), HttpStatus.OK);
     }
 }
