@@ -5,12 +5,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+
 @RestController
-@RequestMapping("/api/alpha")
+@RequestMapping("/api/lista")
+
 public class BookController {
 
-    @GetMapping("/{nome}")
-    public String findById(@PathVariable(name = "nome") String nome) {
-        return "versao: 1.0 -->> oi " + nome + " --> :)";
+    private HashMap<String, String> ma;
+
+    public BookController() {
+        ma = new HashMap<>(0);
+    }
+
+    @GetMapping("/add/{nome}")
+    public String add(@PathVariable(name = "nome") String nome) {
+        ma.put(nome, null);
+        return "versao: 1.0 -->> add " + nome;
+    }
+
+
+    @GetMapping("/remove/{nome}")
+    public String remove(@PathVariable(name = "nome") String nome) {
+        ma.remove(nome, null);
+        return "versao: 1.0 -->> remove " + nome;
     }
 }
