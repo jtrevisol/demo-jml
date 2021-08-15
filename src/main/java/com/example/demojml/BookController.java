@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/lista")
@@ -29,5 +30,10 @@ public class BookController {
     public String remove(@PathVariable(name = "nome") String nome) {
         ma.remove(nome, null);
         return "versao: 1.0 -->> remove " + nome;
+    }
+
+    @GetMapping("/listar")
+    public Set<String> listar() {
+        return ma.keySet();
     }
 }
