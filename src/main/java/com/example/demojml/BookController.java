@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     @GetMapping("/{nome}")
-    public String findById(@PathVariable(name="nome") String nome) {
-        return "hello " + nome;
+    public String findById(@PathVariable(name = "nome") String nome) {
+        return "oi " + nome + " --> :)";
     }
 }
