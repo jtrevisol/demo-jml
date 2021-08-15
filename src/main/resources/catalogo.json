@@ -1,0 +1,127 @@
+[
+  {
+    "id": 0,
+    "nome": "Massas",
+    "produtos": [
+      {
+        "id": 0,
+        "nome": "Bigole",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Parafuso",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Espaguete",
+        "categoria": null
+      }
+    ]
+  },
+  {
+    "id": 0,
+    "nome": "Paes e Cucas",
+    "produtos": [
+      {
+        "id": 0,
+        "nome": "Pão Colonial",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Pão de Forma",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Pão de Cachorro Quente",
+        "categoria": null
+      }
+    ]
+  },
+  {
+    "id": 0,
+    "nome": "Massas diversas",
+    "produtos": [
+      {
+        "id": 0,
+        "nome": "Massa pronta de Pastel",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Massa pronta de Pizza",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Agnoline",
+        "categoria": null
+      }
+    ]
+  },
+  {
+    "id": 0,
+    "nome": "Salgados",
+    "produtos": [
+      {
+        "id": 0,
+        "nome": "Cachorrinho",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Pastel",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Pão de Queijo",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Pastel de Queijo",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Pastel de Frango",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Risole",
+        "categoria": null
+      }
+    ]
+  },
+  {
+    "id": 0,
+    "nome": "Tortas e Bolos",
+    "produtos": [
+      {
+        "id": 0,
+        "nome": "Bolo de Chocolate",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Bolo de Milho",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Bolo de Doce de Leite",
+        "categoria": null
+      },
+      {
+        "id": 0,
+        "nome": "Torta de aniversário",
+        "categoria": null
+      }
+    ]
+  }
+]

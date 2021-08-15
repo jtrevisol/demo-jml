@@ -1,15 +1,11 @@
 package com.example.demojml.entities;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Setter
-@Getter
-@ToString
-public class Produto {
+import java.util.List;
 
+@Data
+public class Produto extends ItemBase {
     private long id;
-    private String nome;
-    private Categoria categoria;
+    private List<ItemAdicional> itemAdicional;
 }

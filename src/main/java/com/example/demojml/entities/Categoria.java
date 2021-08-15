@@ -9,11 +9,8 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
-public class Categoria {
+public class Categoria extends ItemBase {
 
     private long id;
-    private String nome;
-
     private List<Produto> produtos;
-
 }

@@ -2,13 +2,15 @@ package com.example.demojml;
 
 import com.example.demojml.entities.Categoria;
 import com.example.demojml.entities.Produto;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/api/catalogo")
@@ -157,13 +159,8 @@ public class CatalogoController {
         }
     }
 
-//    @GetMapping("/produtos/{categoria}")
-//    public List<Produto> produtos(@PathVariable(name = "categoria") String categoria) {
-//        return this.categorias.stream().filter(a -> a.getNome().equals(categoria)).map(a -> a.getProdutos());
-//    }
-
-    @GetMapping("/categorias")
-    public List<Categoria> categorias() {
-        return this.categorias;
+    @GetMapping(path = "/categorias", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> categorias() {
+        return new ResponseEntity<Object>(categorias, HttpStatus.OK);
     }
 }
